@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_note.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/notification_fcm.xml" value="0.33" />
       </map>
     </option>
   </component>

@@ -9,9 +9,10 @@ import com.example.mynotesapp.models.Note
 import com.example.mynotesapp.repositorys.NoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class NotesViewModel(private val repository: NoteRepository): ViewModel(), Observable {
+class NotesViewModel @Inject constructor(private val repository: NoteRepository): ViewModel(), Observable {
 
     val notes = repository.notes
 

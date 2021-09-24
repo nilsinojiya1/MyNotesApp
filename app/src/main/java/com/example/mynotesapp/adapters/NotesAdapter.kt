@@ -22,12 +22,23 @@ class NotesAdapter(onNoteListener: OnNoteListener) : RecyclerView.Adapter<NotesA
     class NotesViewHolder(itemView: View, onNoteListener: OnNoteListener): RecyclerView.ViewHolder(itemView), View.OnClickListener, View.OnLongClickListener {
         private val binding = ItemNoteBinding.bind(itemView)
         var onNoteListener: OnNoteListener = onNoteListener
+        var isCheck = false
         fun bind(note: Note){
             with(binding){
                 tvTitle.text = note.title
                 tvDescription.text = note.description
+                tvDescription.setOnClickListener {
+                    if(!isCheck){
+                        tvDescription.maxLines = Integer.MAX_VALUE
+                        isCheck = true
+                    } else {
+                        tvDescription.maxLines = 3
+                        isCheck = false
+                    }
+                }
+                ivEdit.setOnClickListener(this@NotesViewHolder)
             }
-            itemView.setOnClickListener(this)
+
             itemView.setOnLongClickListener(this)
         }
 

@@ -2,8 +2,11 @@ package com.example.mynotesapp.repositorys
 
 import com.example.mynotesapp.dao.NoteDAO
 import com.example.mynotesapp.models.Note
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class NoteRepository(private val dao: NoteDAO) {
+@Singleton
+class NoteRepository @Inject constructor(private val dao: NoteDAO) {
 
     val notes = dao.getAllNotes()
 

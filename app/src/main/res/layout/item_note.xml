@@ -12,7 +12,7 @@
         android:padding="5dp"
         android:background="@android:color/transparent"
         app:cardBackgroundColor="@color/white"
-        app:cardElevation="5dp">
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -20,14 +20,29 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <TextView
-                android:id="@+id/tvTitle"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Title"
-                style="@style/Heading"
-                android:textSize="18sp"
-                android:padding="5dp"/>
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="75"
+                    android:text="Title"
+                    style="@style/Heading"
+                    android:textSize="18sp"
+                    android:padding="5dp"/>
+
+                <ImageView
+                    android:id="@+id/ivEdit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:tint="@color/primaryLightColor"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvDescription"
@@ -35,8 +50,9 @@
                 android:layout_height="wrap_content"
                 android:text="this is etDescription"
                 style="@style/Caption"
-                android:padding="5dp"/>
-
+                android:padding="5dp"
+                android:maxLines="3"
+                android:ellipsize="end"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
